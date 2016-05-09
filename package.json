@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "multiple",
     "ping",
     "race",
-    "shell"
+    "cli"
   ],
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.9.0",
+    "meow": "^3.7.0",
     "ora": "^0.2.1"
   }
 }
