@@ -1,10 +1,14 @@
 {
   "name": "pingrace",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A ping race program",
+  "repository": "amio/node-pingrace",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch": "npm version patch -m 'v%s'",
+    "minor": "npm version minor -m 'v%s'",
+    "major": "npm version major -m 'v%s'"
   },
   "keywords": [
     "multiple",
