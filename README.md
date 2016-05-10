@@ -1,5 +1,5 @@
 # pingrace
-Ping hosts to see which one is faster: a ping race program.
+Ping hosts to compare which one is faster, A Ping Race Program.
 
 ```
 Usage

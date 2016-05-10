@@ -1,20 +1,16 @@
-var meow = require('meow')
-import main from './lib/main'
+import main from './src/main'
+import printHelp from './src/print-help'
 
-var minimistOptions = {
-  alias: { c: 'count' }
+const argv = require('minimist')(process.argv.slice(2), {
+  alias: {
+    h: 'help',
+    c: 'count'
+  }
+})
+
+if (argv.help || argv._.length === 0) {
+  printHelp()
+  process.exit()
 }
 
-var cli = meow(`
-  Usage
-    $ pingrace <host> [<host>...]
-
-  Options
-    -c, --count  Ping every host a specific number of times (default: 10)
-
-  Examples
-    $ pingrace a.example.com b.example.com c.example.com
-    $ pingrace -c 10 a.example.com b.example.com c.example.com
-`, minimistOptions)
-
-main(cli.input, cli.flags)
+main(argv._, argv)
