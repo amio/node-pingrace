@@ -9,7 +9,8 @@
     "build": "rm -rf dist/** && rollup -c",
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
-    "major": "npm version major -m 'v%s'"
+    "major": "npm version major -m 'v%s'",
+    "pub": "npm run build && npm publish"
   },
   "keywords": [
     "multiple",
