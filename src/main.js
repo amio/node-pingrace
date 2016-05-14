@@ -55,6 +55,10 @@ function printStaticsTable (results) {
 
   results
     .map(result => parseStatics(result))
+    .sort((a, b) => {
+      const [al, bl] = [parseFloat(a.lossRate), parseFloat(b.lossRate)]
+      return al === bl && a.avg > b.avg || al > bl
+    })
     .map(result => printStaticsTableRow(result))
 
   process.stdout.write('\n')

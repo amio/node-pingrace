@@ -22,9 +22,9 @@ export function parseStatics (rawStatics) {
     total: total,
     received: received,
     lossRate: lossRate,
-    min: min,
-    max: max,
-    avg: avg,
+    min: parseFloat(min, 10),
+    max: parseFloat(max, 10),
+    avg: parseFloat(avg, 10),
     stddev: stddev
   }
 }
