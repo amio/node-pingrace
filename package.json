@@ -1,6 +1,6 @@
 {
   "name": "pingrace",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A ping race program",
   "repository": "amio/node-pingrace",
   "bin": "dist/index.js",
