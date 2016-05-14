@@ -16,7 +16,7 @@ export function parseStatics (rawStatics) {
   const lines = rawStatics.split('\n')
   const [host] = lines[0].match(/\b[\w\d.]+/)
   const [total, received, lossRate] = lines[1].match(/[\d.%]+/g)
-  const [min, avg, max, stddev] = lines[2].match(/[\d.]+/g)
+  const [min, avg, max, stddev] = (received === '0' ? [0, 0, 0, 0] : lines[2].match(/[\d.]+/g))
   return {
     host: host,
     total: total,

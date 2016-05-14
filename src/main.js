@@ -22,13 +22,7 @@ export default function (hosts, flags) {
         progress += '='
         spinner.text = `${tripsCount}/${total} ${progress}`
       })
-      cp.on('close', (code) => {
-        if (code === 0) {
-          resolve(parseLog(log).statics)
-        } else {
-          resolve({code: code, msg: `Ping ${host} exited with code ${code}`})
-        }
-      })
+      cp.on('close', code => resolve(parseLog(log).statics))
     })
   })).then(results => {
     spinner.stop()
@@ -40,7 +34,7 @@ export default function (hosts, flags) {
 }
 
 function printStaticsTable (results) {
-  const title = '. . . . . . . RACING RESULT . . . . . . .'
+  const title = `. . . . . . . RACING RESULT (${results.length}) . . . . . . .`
   process.stdout.write(`\n                ${title}\n\n`)
 
   const headers = {
@@ -52,14 +46,13 @@ function printStaticsTable (results) {
     stddev: 'stddev(ms)'
   }
   printStaticsTableRow(headers)
-
   results
     .map(result => parseStatics(result))
     .sort((a, b) => {
       const [al, bl] = [parseFloat(a.lossRate), parseFloat(b.lossRate)]
-      return al === bl && a.avg > b.avg || al > bl
+      return al === bl ? (a.avg - b.avg) : (al - bl)
     })
-    .map(result => printStaticsTableRow(result))
+    .forEach(result => printStaticsTableRow(result))
 
   process.stdout.write('\n')
 }
