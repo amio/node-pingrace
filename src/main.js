@@ -13,16 +13,25 @@ export default function (hosts, flags) {
   spinner.text = `${tripsCount}/${total} ${progress}`
 
   Promise.all(hosts.map(host => {
-    let log = ''
     return new Promise((resolve, reject) => {
       const cp = spawn('ping', [`-c${count}`].concat(host))
+      let log = ''
       cp.stdout.on('data', data => {
         log += data.toString()
         tripsCount += 1
         progress += '='
         spinner.text = `${tripsCount}/${total} ${progress}`
       })
-      cp.on('close', code => resolve(parseLog(log).statics))
+      cp.stderr.on('data', data => (log += data.toString()))
+      cp.on('close', code => {
+        switch (code) {
+          case 68:
+            // ping: cannot resolve <host>: Unknown host
+            return reject(log)
+          default:
+            resolve(parseLog(log).statics)
+        }
+      })
     })
   })).then(results => {
     spinner.stop()
@@ -41,8 +50,7 @@ function printStaticsTable (results) {
     host: '',
     lossRate: 'loss',
     avg: 'avg(ms)',
-    min: 'min(ms)',
-    max: 'max(ms)',
+    deviation: 'deviation',
     stddev: 'stddev(ms)'
   }
   printStaticsTableRow(headers)
@@ -58,12 +66,15 @@ function printStaticsTable (results) {
 }
 
 function printStaticsTableRow (statics) {
+  const {avg, min, max} = statics
+  if (!statics.deviation) {
+    statics.deviation = ('± ' + Math.abs(avg * 2 - min - max) / avg).slice(0, 6) + '%'
+  }
   process.stdout.write([
     padEnd(statics.host, 20, ' '),
     padStart(statics.lossRate, 12, ' '),
-    padStart(statics.min, 12, ' '),
-    padStart(statics.avg, 12, ' '),
-    padStart(statics.max, 12, ' '),
+    padStart(Math.round(avg) || avg, 12, ' '),
+    padStart(statics.deviation, 12, ' '),
     padStart(statics.stddev, 12, ' ')
   ].join('') + '\n')
 }
