@@ -1,3 +1,5 @@
+const path = require('path')
+
 const helpText = `
   Usage
     $ pingrace <host> [<host>...]
@@ -10,6 +12,11 @@ const helpText = `
     $ pingrace -c 10 a.example.com b.example.com c.example.com
 `
 
-export default function printHelp () {
+export function printHelp () {
   process.stdout.write(helpText)
+}
+
+export function printVersion () {
+  const version = 'v' + require(path.join(__dirname, '../package.json')).version
+  process.stdout.write(version + '\n')
 }
