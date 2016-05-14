@@ -1,5 +1,5 @@
-import main from './src/main'
-import printHelp from './src/print-help'
+import main from './main'
+import printHelp from './print-help'
 
 const argv = require('minimist')(process.argv.slice(2), {
   alias: {

@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "description": "A ping race program",
   "repository": "amio/node-pingrace",
-  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "main": "src/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist/** && rollup -c",

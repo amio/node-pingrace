@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 
 export default {
-  entry: 'cli.js',
+  entry: 'src/cli.js',
   dest: 'dist/index.js',
   format: 'iife',
   plugins: [
