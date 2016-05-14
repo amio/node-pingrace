@@ -6,6 +6,7 @@ export default {
   entry: 'src/cli.js',
   dest: 'dist/index.js',
   format: 'iife',
+  banner: '#!/usr/bin/env node',
   plugins: [
     babel({
       exclude: 'node_modules/**',
