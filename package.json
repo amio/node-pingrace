@@ -11,7 +11,7 @@
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
     "major": "npm version major -m 'v%s'",
-    "pub": "npm run build && npm publish"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "multiple",
@@ -22,6 +22,7 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.12.0",
     "minimist": "^1.2.0",
     "ora": "^0.2.1"
   },

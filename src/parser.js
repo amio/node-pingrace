@@ -5,3 +5,26 @@ export function parseLog (txt) {
     statics: segments[1].trim()
   }
 }
+
+/*
+ * Raw format:
+ * --- p1.hk2.vpnko.com ping statistics ---
+ * 1 packets transmitted, 1 packets received, 0.0% packet loss
+ * round-trip min/avg/max/stddev = 190.845/190.845/190.845/0.000 ms
+ */
+export function parseStatics (rawStatics) {
+  const lines = rawStatics.split('\n')
+  const [host] = lines[0].match(/\b[\w\d.]+/)
+  const [total, received, lossRate] = lines[1].match(/[\d.%]+/g)
+  const [min, avg, max, stddev] = lines[2].match(/[\d.]+/g)
+  return {
+    host: host,
+    total: total,
+    received: received,
+    lossRate: lossRate,
+    min: min,
+    max: max,
+    avg: avg,
+    stddev: stddev
+  }
+}
