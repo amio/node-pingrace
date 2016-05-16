@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A ping race program",
   "repository": "amio/node-pingrace",
+  "preferGlobal": true,
   "bin": "dist/index.js",
   "main": "src/cli.js",
   "scripts": {
@@ -17,6 +18,8 @@
     "multiple",
     "ping",
     "race",
+    "test",
+    "faster",
     "cli"
   ],
   "author": "Amio <amio.cn@gmail.com>",

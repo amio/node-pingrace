@@ -1,6 +1,10 @@
 # pingrace
 Ping hosts to compare which one is faster, A Ping Race Program.
 
+<img width="580" alt="pingrace screenshot" src="https://cloud.githubusercontent.com/assets/215282/15285309/e194382a-1b88-11e6-9371-0817a0b2e7ba.png">
+
+> NOTE: Mac & Linux only.
+
 ```
 Usage
   $ pingrace <host> [<host>...]
