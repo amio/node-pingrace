@@ -5,6 +5,13 @@ Ping hosts to compare which one is faster, A Ping Race Program.
 
 > NOTE: Mac & Linux only.
 
+### Install
+```
+npm install -g pingrace
+```
+
+### Usage
+
 ```
 Usage
   $ pingrace <host> [<host>...]
