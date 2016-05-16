@@ -3,8 +3,8 @@ import padStart from 'lodash/padStart'
 import padEnd from 'lodash/padEnd'
 
 export function printStaticsTable (results) {
-  const title = `. . . . . . . RACING RESULT (${results.length}) . . . . . . .`
-  process.stdout.write(`\n           ${title}\n\n`)
+  const title = `. . . . . . RACING RESULT (${results.length}) . . . . . .`
+  process.stdout.write(`\n             ${title}\n\n`)
 
   const headers = {
     host: '',
