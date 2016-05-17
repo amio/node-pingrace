@@ -1,25 +1,23 @@
 import padEnd from 'lodash/padEnd'
 const spinner = require('ora')()
 
-const state = {
+const config = {
   hosts: 0,
-  count: 0,
-  totalCount: 0
+  count: 0
 }
 
 function start (pingCount, hosts) {
-  state.hosts = hosts
-  state.count = pingCount
-  state.totalCount = hosts * pingCount
+  config.hosts = hosts
+  config.count = pingCount
 
   spinner.start()
-  spinner.text = `0/${state.total}`
+  spinner.text = `0/${config.count}`
 }
 
 function update (doneCount) {
-  const done = Math.round(doneCount / state.hosts)
-  const progress = padEnd(padEnd('', done, '='), state.count, '.')
-  spinner.text = `${done}/${state.count} ${progress}`
+  const done = Math.round(doneCount / config.hosts)
+  const progress = padEnd(padEnd('', done, '='), config.count, '.')
+  spinner.text = `${done}/${config.count} ${progress}`
 }
 
 function stop () {
