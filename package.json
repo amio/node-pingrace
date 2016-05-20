@@ -24,6 +24,10 @@
   ],
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
+  "os" : [
+    "darwin",
+    "linux"
+  ],
   "dependencies": {
     "lodash": "^4.12.0",
     "minimist": "^1.2.0",
