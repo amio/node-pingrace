@@ -15,7 +15,7 @@ function start (pingCount, hosts) {
 }
 
 function update (doneCount) {
-  const done = Math.round(doneCount / config.hosts)
+  const done = Math.floor(doneCount / config.hosts)
   const progress = padEnd(padEnd('', done, '='), config.count, '.')
   spinner.text = `${done}/${config.count} ${progress}`
 }
