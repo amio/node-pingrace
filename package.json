@@ -34,15 +34,15 @@
     "ora": "0.2.x"
   },
   "devDependencies": {
-    "babel-eslint": "6.x",
-    "babel-preset-es2015-rollup": "1.1.x",
-    "eslint": "3.x",
+    "babel-eslint": "^6.1.x",
+    "babel-preset-es2015-rollup": "^1.1.x",
+    "eslint": "^3.1.x",
     "eslint-config-standard": "6.0.0-beta.2",
-    "eslint-plugin-promise": "2.x",
-    "eslint-plugin-standard": "2.x",
-    "rollup": "0.34.x",
-    "rollup-plugin-babel": "2.x",
-    "rollup-plugin-commonjs": "3.x",
-    "rollup-plugin-node-resolve": "1.x"
+    "eslint-plugin-promise": "^2.0.x",
+    "eslint-plugin-standard": "^2.0.x",
+    "rollup": "^0.34.x",
+    "rollup-plugin-babel": "^2.6.x",
+    "rollup-plugin-commonjs": "^3.3.x",
+    "rollup-plugin-node-resolve": "^1.7.x"
   }
 }
