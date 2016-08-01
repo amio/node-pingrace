@@ -29,20 +29,20 @@
     "linux"
   ],
   "dependencies": {
-    "lodash": "4.x",
-    "minimist": "1.x",
-    "ora": "0.2.x"
+    "lodash": "^4.0",
+    "minimist": "^1.0",
+    "ora": "^0.3.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.x",
-    "babel-preset-es2015-rollup": "^1.1.x",
-    "eslint": "^3.2.x",
+    "babel-eslint": "^6.1.0",
+    "babel-preset-es2015-rollup": "^1.1.0",
+    "eslint": "^3.2.0",
     "eslint-config-standard": "6.0.0-beta.2",
-    "eslint-plugin-promise": "^2.0.x",
-    "eslint-plugin-standard": "^2.0.x",
-    "rollup": "^0.34.x",
-    "rollup-plugin-babel": "^2.6.x",
-    "rollup-plugin-commonjs": "^3.3.x",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "rollup": "^0.34.0",
+    "rollup-plugin-babel": "^2.6.0",
+    "rollup-plugin-commonjs": "^3.3.0",
     "rollup-plugin-node-resolve": "^2.0.0"
   }
 }
