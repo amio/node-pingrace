@@ -29,7 +29,8 @@
     "linux"
   ],
   "dependencies": {
-    "lodash": "^4.0",
+    "lodash.padend": "^4.6.0",
+    "lodash.padstart": "^4.6.0",
     "minimist": "^1.0",
     "ora": "^0.3.0"
   },
@@ -41,8 +42,6 @@
     "eslint-plugin-promise": "^2.0.0",
     "eslint-plugin-standard": "^2.0.0",
     "rollup": "^0.34.0",
-    "rollup-plugin-babel": "^2.6.0",
-    "rollup-plugin-commonjs": "^3.3.0",
-    "rollup-plugin-node-resolve": "^2.0.0"
+    "rollup-plugin-babel": "^2.6.0"
   }
 }

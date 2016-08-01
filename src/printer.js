@@ -1,6 +1,6 @@
 import { parseStatics } from './parser'
-import padStart from 'lodash/padStart'
-import padEnd from 'lodash/padEnd'
+const padStart = require('lodash.padstart')
+const padEnd = require('lodash.padend')
 
 export function printStaticsTable (results) {
   const title = `. . . . . . RACING RESULT (${results.length}) . . . . . .`

@@ -1,4 +1,4 @@
-import padEnd from 'lodash/padEnd'
+const padEnd = require('lodash.padend')
 const spinner = require('ora')()
 
 const config = {
