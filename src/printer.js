@@ -16,7 +16,7 @@ export function printStaticsTable (results) {
   // print title
   let title = padStart(
     `. . . . . RACING RESULT (${results.length}) . . . . .`,
-    Math.floor(hostMaxLength / 2) + 42,
+    Math.floor(hostMaxLength / 2) + 40,
     ' '
   )
   process.stdout.write(`\n${title}\n\n`)
