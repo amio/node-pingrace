@@ -25,7 +25,7 @@
     "linux"
   ],
   "dependencies": {
-    "lodash.padend": "^4.6.0",
+    "lodash.padend": "^4.6.1",
     "lodash.padstart": "^4.6.1",
     "minimist": "^1.0",
     "ora": "^0.3.0"
