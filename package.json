@@ -3,12 +3,26 @@
   "version": "1.0.4",
   "description": "A ping race program",
   "repository": "amio/node-pingrace",
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "MIT",
   "preferGlobal": true,
   "bin": "dist/index.js",
   "main": "src/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "standard src/*.js",
     "build": "rm -rf dist/** && rollup -c"
+  },
+  "dependencies": {
+    "lodash.padend": "^4.6.1",
+    "lodash.padstart": "^4.6.1",
+    "minimist": "^1.0",
+    "ora": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "rollup": "^0.35.7",
+    "rollup-plugin-babel": "^2.6.0",
+    "standard": "^8.0.0"
   },
   "keywords": [
     "multiple",
@@ -18,26 +32,8 @@
     "faster",
     "cli"
   ],
-  "author": "Amio <amio.cn@gmail.com>",
-  "license": "MIT",
   "os": [
     "darwin",
     "linux"
-  ],
-  "dependencies": {
-    "lodash.padend": "^4.6.1",
-    "lodash.padstart": "^4.6.1",
-    "minimist": "^1.0",
-    "ora": "^0.3.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^6.1.0",
-    "babel-preset-es2015-rollup": "^1.2.0",
-    "eslint": "^3.5.0",
-    "eslint-config-standard": "6.0.0",
-    "eslint-plugin-promise": "^2.0.1",
-    "eslint-plugin-standard": "^2.0.0",
-    "rollup": "^0.35.7",
-    "rollup-plugin-babel": "^2.6.0"
-  }
+  ]
 }

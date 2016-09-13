@@ -5,7 +5,7 @@ import spinner from './spinner'
 
 export default function (hosts, flags) {
   const pingLogs = {}
-  const count = flags.count ? parseInt(flags.count) : 10
+  const count = flags.count ? parseInt(flags.count, 10) : 10
   spinner.start(count, hosts.length)
 
   Promise.all(hosts.map(host => {
