@@ -39,7 +39,7 @@ export function printStaticsTable (results) {
 function printStaticsTableRow (statics, hostMaxLength) {
   const {avg, min, max} = statics
   if (!statics.deviation) {
-    statics.deviation = ('± ' + Math.abs(avg * 2 - min - max) / avg).slice(0, 6) + '%'
+    statics.deviation = ('± ' + (Math.abs((avg * 2) - min - max) / avg)).slice(0, 6) + '%'
   }
   process.stdout.write([
     padEnd(statics.host, hostMaxLength, ' '),

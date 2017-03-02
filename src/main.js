@@ -17,6 +17,7 @@ export default function (hosts, flags) {
       cp.on('close', code => {
         switch (code) {
           case 68:
+            /* eslint-disable prefer-promise-reject-errors */
             // ping: "cannot resolve <host>: Unknown host"
             return reject({code: code, msg: pingLogs[host]})
           default:
