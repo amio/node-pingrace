@@ -1,7 +1,7 @@
 const spawn = require('child_process').spawn
-import { parseLog } from './parser'
-import { printStaticsTable } from './printer'
-import spinner from './spinner'
+const parser = require('./parser')
+const printer = require('./printer')
+const spinner = require('./spinner')
 
 export default function (hosts, flags) {
   const pingLogs = {}
@@ -21,13 +21,13 @@ export default function (hosts, flags) {
             // ping: "cannot resolve <host>: Unknown host"
             return reject({code: code, msg: pingLogs[host]})
           default:
-            return resolve(parseLog(pingLogs[host]).statics)
+            return resolve(parser.parseLog(pingLogs[host]).statics)
         }
       })
     })
   })).then(results => {
     spinner.stop()
-    printStaticsTable(results)
+    printer.printStaticsTable(results)
   }).catch(reason => {
     spinner.stop()
     process.stdout.write(reason.msg)
