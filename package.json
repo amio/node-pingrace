@@ -22,7 +22,7 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "rollup": "^0.55.2",
     "rollup-plugin-babel": "^3.0.0",
-    "standard": "^10.0.0"
+    "standard": "^11.0.0"
   },
   "keywords": [
     "multiple",
